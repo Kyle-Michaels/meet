@@ -123,3 +123,8 @@
   When: User selects display charts of event details
   Then: User should see charts showing the number of upcoming events in each city.
 </p>
+<h3>How Meet will use Serverless Functions</h3>
+<p>
+  The Meet app will use serverless functions for authentication, authorization, and to present data from the Google Calender API.
+  Serverless functions will be used through AWS Lambda and will be able to scale with user demands.
+</p>

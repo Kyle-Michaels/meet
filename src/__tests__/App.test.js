@@ -45,4 +45,19 @@ describe('<App /> integration', () => {
 
     expect(allRenderedEventItems.length).toBe(berlinEvents.length);
   });
+  test('renders selected number of events from user', async () => {
+    const user = userEvent.setup();
+    const AppComponent = render(<App />);
+    const AppDOM = AppComponent.container.firstChild;
+
+    const NumberOfEventsDOM = AppDOM.querySelector('#number-of-events');
+    const NOEInput = within(NumberOfEventsDOM).queryByRole('textbox');
+
+    await user.type(NOEInput, '{backspace}{backspace}10');
+
+    const EventListDOM = AppDOM.querySelector('#event-list');
+    const allRenderedEventItems = within(EventListDOM).queryAllByRole('listitem');
+
+    expect(allRenderedEventItems.length).toEqual(10);
+  })
 });

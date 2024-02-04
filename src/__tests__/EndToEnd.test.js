@@ -1,5 +1,6 @@
 import puppeteer from 'puppeteer';
 
+// Feature 2
 describe('show/hide an event details', () => {
   let browser;
   let page;

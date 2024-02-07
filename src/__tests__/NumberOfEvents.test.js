@@ -8,7 +8,7 @@ describe('<NumberOfEvents /> component', () => {
   let NumberOfEventsComponent;
   let NOEInput;
   beforeEach(() => {
-    NumberOfEventsComponent = render(<NumberOfEvents />);
+    NumberOfEventsComponent = render(<NumberOfEvents setCurrentNOE={() => { }} setErrorAlert={() => { }} />);
     NOEInput = NumberOfEventsComponent.queryByRole('textbox');
   });
 
@@ -20,7 +20,7 @@ describe('<NumberOfEvents /> component', () => {
   });
   test('verify that value changes based on user input', async () => {
     const user = userEvent.setup();
-    NumberOfEventsComponent.rerender(<NumberOfEvents setCurrentNOE={() => { }} />);
+    NumberOfEventsComponent.rerender(<NumberOfEvents setCurrentNOE={() => { }} setErrorAlert={() => { }} />);
     await user.type(NOEInput, '{backspace}{backspace}10');
     expect(NOEInput).toHaveValue('10');
   });

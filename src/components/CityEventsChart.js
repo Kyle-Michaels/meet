@@ -14,18 +14,15 @@ const CityEventsChart = ({ allLocations, events }) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    setData(getData());
-  }, [`${events}`]);
-
-  const getData = () => {
     const data = allLocations.map((location) => {
       const count = events.filter((event) => event.location === location).length
       console.log(count);
       const city = location.split((/, | - /))[0]
       return { city, count };
-    })
-    return data;
-  };
+    });
+
+    setData(data);
+  }, [events, allLocations]);
 
   return (
     <ResponsiveContainer width="99%" height={400}>

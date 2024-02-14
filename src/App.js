@@ -28,17 +28,20 @@ const App = () => {
       warningText = "Viewing in offline mode, some events may not be up to date."
     }
     setWarningAlert(warningText);
+
+    const fetchData = async () => {
+      const allEvents = await getEvents();
+      const filteredEvents = currentCity === "See all cities" ?
+        allEvents :
+        allEvents.filter(event => event.location === currentCity)
+      setEvents(filteredEvents.slice(0, currentNOE));
+      setAllLocations(extractLocations(allEvents));
+    };
+
     fetchData();
   }, [currentCity, currentNOE]);
 
-  const fetchData = async () => {
-    const allEvents = await getEvents();
-    const filteredEvents = currentCity === "See all cities" ?
-      allEvents :
-      allEvents.filter(event => event.location === currentCity)
-    setEvents(filteredEvents.slice(0, currentNOE));
-    setAllLocations(extractLocations(allEvents));
-  };
+
 
   return (
     <div className="App">

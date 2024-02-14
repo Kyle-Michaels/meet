@@ -7,24 +7,24 @@ import {
   Pie
 } from 'recharts';
 
+const genres = ['React', 'JavaScript', 'Node', 'jQuery', 'Angular'];
+
 const EventGenresChart = ({ events }) => {
   const [data, setData] = useState([]);
-  const genres = ['React', 'JavaScript', 'Node', 'jQuery', 'Angular'];
 
   useEffect(() => {
-    setData(getData());
-  }, [`${events}`]);
-
-  const getData = () => {
     const data = genres.map(genre => {
       const filteredEvents = events.filter(event => event.summary.includes(genre));
       return {
         name: genre,
         value: filteredEvents.length
       }
-    })
-    return data;
-  };
+    });
+
+    setData(data);
+  }, [events]);
+
+
 
   const renderCustomizedLabel = ({ cx, cy, midAngle, outerRadius, percent, index }) => {
     const RADIAN = Math.PI / 180;

@@ -1,12 +1,32 @@
 <h1>Meet app</h1>
-<hr />
 <h2>Objective<h2>
 <p>
   To build a serverless, progressive web application (PWA) with React using a
   test-driven development (TDD) technique. The application uses the Google
   Calendar API to fetch upcoming events.
 </p>
-<hr />
+<h2>Features</h2>
+  <ul>
+    <li>OAuth login: Users can securely log in using Google's OAuth</li>
+    <li>Google Calendar: Accesses and displays events from user's google calendar</li>
+    <li>Offline Capability: Users can access the app offline to view previously loaded events</li>
+    <li>Testing: Tested with JEST, Puppeteer, and Cucumber Gherkin.</li>
+  </ul>
+<h2>Getting Started</h2>
+  <ul>
+    <li>Clone the repository</li>
+    <li>Install dependencies with <code>npm install</code></li>
+    <li>Start application with <code>npm run start</code></li>
+  </ul>
+<h2>Technologies</h2>
+  <ul>
+    <li>React</li>
+    <li>Recharts</li>
+    <li>Google OAuth</li>
+    <li>Puppeteer</li>
+    <li>JEST</li>
+    <li>Cucumber Gherkin</li>
+  </ul>
 <h2>User Stories</h2>
 <h3>Feature 1: Filter Events By City<h3>
 <p>

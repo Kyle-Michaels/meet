@@ -1,3 +1,4 @@
+![preview](https://github.com/Kyle-Michaels/meet/blob/main/meet.jpg?raw=true)
 <h1>Meet app</h1>
 <h2>Objective<h2>
 <p>
